@@ -23,4 +23,4 @@ development process, but are not essential.
 
 ## About
 
-Typescript Frogger Game
+Typescript Frogger Game on browser.
