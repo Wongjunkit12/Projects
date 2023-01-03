@@ -23,3 +23,7 @@ Removes unnecessary build files to reduce bundle size.
 `/usr/bin/ld.gold: error: cannot find -lgmp`
 
 Run `sudo apt-get install libgmp3-dev`
+
+## About
+
+Haskell Parsers
