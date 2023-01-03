@@ -26,4 +26,4 @@ Run `sudo apt-get install libgmp3-dev`
 
 ## About
 
-Haskell Parsers
+Haskell Parsers.
