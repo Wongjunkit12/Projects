@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>FIT2102 A1 2022</title>
+    <style>
+      .key {
+        width: 18px;
+        text-align: center;
+        border-radius: 3px;
+        background-color:lightgray;
+      }
+      div#controls {
+        float: right;
+        margin-right: 600px;
+      }
+      .highlight {
+        background-color:gray;
+      }
+      div#instructions {
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Frogger</h1>
+    <svg id = "svgCanvas" width = "600" height = "600">
+    </svg>
+    <div id = "controls">
+      <h2>Controls:</h2>
+      <table>
+        <tr><td>Move Up</td><td><div id = "KeyW" class = "key" style="width: 50px">W</div></td></tr>
+        <tr><td>Move Left</td><td><div id = "KeyA" class = "key" style="width: 50px">A</div></td></tr>
+        <tr><td>Move Down</td><td><div id = "KeyS" class = "key" style="width: 50px">S</div></td></tr>
+        <tr><td>Move Right</td><td><div id = "KeyD" class = "key" style="width: 50px">D</div></td></tr>
+        <tr><td>Restart Game</td><td><div id = "KeyR" class = "key" style="width: 50px">R</div></td></tr>
+    </table>
+    </div>
+    <div id = "instructions">
+      <h3>Instructions:</h3>
+      <p>
+        Use WASD to move Frogger. R to restart the game. 
+      </p>
+      <p>
+        Hitting a car (red) will kill Frogger. The river is heavily polluted with dangerous chemicals, causing instant death to Frogger
+        if he so happens to touch it. Stand on planks (brown) to avoid certain death! Shhh the crocodiles (yellow) are asleep. 
+        Although crocodiles can be safely stepped on, they will get angry if you stay too long! 
+        Crocodiles will attack and kill Frogger if it stands on them for more than 2 seconds! So keep moving to avoid certain death!
+      </p>
+      <p>
+        Why did Frogger cause the road? To get to the targets of course! Reach the targets at the end (non-purple holes) to
+        achieve a whopping 100 score each!. Filling already filled
+        targets will give no score. Filling all 6 targets on the other hand will add another 200 to your score.
+        However, it comes at a cost... Speed of all in game obstacles (cars, planks etc) will increase as a result! 
+        Filling all 6 targets will clear the targets, ready for Frogger to fill it again!
+        Each unique row move will grant an additional 5 score too.
+        Frogger is hungry, so satisfying his hunger will surely reward you! Eating flies (orange) will give an extra 50 score!
+      </p>
+      <p>
+        What happens when Frogger die? Don't worry, you can restart the game to try again. Your High Score will be saved, 
+        so you can try to beat it in the next attempt!
+      </p>
+    </div>
+  </body>
+</html>
