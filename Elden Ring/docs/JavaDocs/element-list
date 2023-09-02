@@ -1,0 +1,17 @@
+game
+game.actions
+game.behaviours
+game.characters.non_playable_characters
+game.characters.playable_characters
+game.characters.playable_characters.classes
+game.displays
+game.enemies
+game.enemies.limgrave.east
+game.enemies.limgrave.west
+game.enemies.stormveil
+game.environments
+game.items
+game.maps
+game.skills
+game.utils
+game.weapons
