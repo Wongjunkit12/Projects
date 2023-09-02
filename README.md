@@ -1,2 +1,2 @@
-# Monash Assignments
-Contains all Monash Assignments and Projects
+# Projects
+Contains all Projects done by Bryan Wong
