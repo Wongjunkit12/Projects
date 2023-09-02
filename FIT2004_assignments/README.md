@@ -1,12 +1,11 @@
-## FIT2004 ASSIGNMENTS
+## Assignment 1
+### Counting and Radix Sort in Python to sort sports teams efficiently
+I embarked on this project because I was eager to deepen my understanding of sorting algorithms and their practical applications. This project provided a hands-on opportunity to explore the inner workings of these sorting techniques, helping me grasp their strengths and weaknesses. By applying these algorithms to sports team data, I learned how to tackle real-world sorting challenges, such as ranking teams based on various criteria. It not only improved my Python programming skills but also honed my problem-solving abilities, making me better equipped to handle data manipulation tasks in diverse contexts. Overall, this project was an educational experience that enriched my knowledge of sorting algorithms and their role in data organization and analysis.
 
-# FIT2004 Assignment 1
-Counting and Radix Sort
+# Assignment 2
+### Using Dijkstra's algorithm efficiently and effectively to solve O(n) time
+I undertook these projects because I aimed to strengthen my problem-solving and algorithmic skills. These projects allowed me to dive deep into graph theory, learning how to model complex real-world scenarios using graphs and efficiently find optimal paths and solutions. Implementing Dijkstra's algorithm enhanced my understanding of shortest-path problems, while dynamic programming expanded my knowledge of efficient algorithm design. Overall, these projects provided valuable hands-on experience, sharpened my analytical thinking, and equipped me with a versatile set of problem-solving tools applicable to various domains, making me a more adept and confident programmer.
 
-# FIT2004 Assignment 2
-Graph creation and Dijkstra's algorithm
-Dynamic Programming, brute forcing in O(n) time.
-
- # FIT2004 Assignment 3
- Ford Fulkerson
- Suffix Tree
+# Assignment 3
+### Ford Fulkerson to find maximum flow and Suffix Tree to find the longest common suffix
+I pursued these projects because I was eager to delve into advanced algorithms with practical applications. These projects allowed me to explore the fascinating world of network flow optimization and string manipulation. By implementing Ford Fulkerson, I gained a deep understanding of flow networks and their use in real-world scenarios like transportation and network design. On the other hand, working on Suffix Trees honed my skills in data structure design and text processing, which are essential in fields like natural language processing and bioinformatics. These projects significantly improved my algorithmic thinking, problem-solving abilities, and programming skills, equipping me with valuable tools for tackling complex problems in various domains.
