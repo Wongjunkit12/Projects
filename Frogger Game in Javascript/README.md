@@ -1,26 +1,3 @@
-# FIT2102 Assignment 1
+# Developed Frogger in Typescript/Javascript using the principles of Functional Programming
 
-All of your changes, code, and game files should be in the src folder.
-
-## Development
-
-There are two ways to run the code:
-
-1. Build the code and then open the web page
-
-- Run `npm install`
-- Run `npm run build`
-- Open the html file dist/index.html (NOT src/index.html)
-
-2. Use the development server
-
-- Run `npm install`
-- Run `npm run dev`, this will automatically open a web page at localhost:4000
-- Open localhost:4000 in your browser if it didn't already
-
-The development server will have some additional features that help with the
-development process, but are not essential.
-
-## About
-
-Typescript Frogger Game on browser.
+This project was a valuable learning experience for me, as it enabled me to explore both game development and functional programming paradigms. This project allowed me to apply functional programming concepts like immutability, pure functions, and higher-order functions in a real-world context, which significantly improved my coding skills. I also improved my problem-solving abilities by overcoming game development challenges, such as collision detection and game mechanics. Furthermore, I had fun and enjoyed building a classic game like Frogger, which motivated me to learn more. The final product was a fully functional game that gave me immense satisfaction and reinforced my passion for programming. Additionally, I expanded my skill set by learning the basics of HTML.
