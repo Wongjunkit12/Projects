@@ -1,3 +1,3 @@
-# FIT1008 ASSIGNMENT 2
+# Simplistic Pokemon Game using Data Structures and ADTs.
 
-Created a basic Pokemon game in Python using ADTs.
+This project was a fun and challenging way for me to apply my programming knowledge to a real-world project that I enjoyed. I created a basic Pokémon game in Python using Abstract Data Types (ADTs) and data structures like stacks and circular queues, which reinforced my Python skills and deepened my understanding of ADTs and how to use them effectively. I also learned how to manage the game mechanics efficiently using data structures like stacks and circular queues, which gave me valuable hands-on experience with these concepts. Furthermore, the project sparked my creativity and coding enthusiasm while combining my love for Pokémon with my passion for programming, making it a rewarding and enjoyable learning experience overall.
