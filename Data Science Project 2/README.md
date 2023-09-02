@@ -1,0 +1,3 @@
+## Developing Basic Machine Learning Models in Jupyter Notebook using scikit-learn
+
+My goal for this project was to learn more about the fascinating field of machine learning and gain hands-on experience with building predictive models. This project helped me comprehend the key concepts of supervised learning, from data preprocessing to model evaluation. I used sklearn to apply various machine learning algorithms and fine-tune their parameters for optimal performance. This practical experience not only increased my confidence in solving real-world problems with machine learning but also provided a strong basis for more complex projects, deepening my knowledge of the field and enhancing my data science and programming skills.
