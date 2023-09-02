@@ -1,3 +1,3 @@
-# FIT1008 MIPS ASSIGNMENT 1
+Using MARS to translate code from Python to MIPS assembly code faithfully.
 
-Using MARS to faithfully translate code from Python to MIPS assembly code.
+I undertook the project of translating Python code to MIPS assembly using MARS for several reasons. Firstly, it provided me with an invaluable opportunity to gain a deeper understanding of computer architecture and the intricacies of how high-level code gets executed at the machine level. This endeavour helped me strengthen my proficiency in both Python and MIPS assembly, making me a more skilled programmer in these languages. Additionally, it served as an excellent educational exercise, allowing me to bridge the gap between high-level and low-level languages, a knowledge base that's crucial for anyone looking to excel in computer science and programming. This project strengthened my understanding of time complexity as it involves optimising code for efficiency.
