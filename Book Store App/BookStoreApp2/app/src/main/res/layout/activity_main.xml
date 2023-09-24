@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <FrameLayout
+            android:id="@+id/touchFrame"
+            android:layout_width="330dp"
+            android:layout_height="113dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#F44336"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/priceInput"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Enter Book's Price"
+            android:inputType="numberDecimal"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/descInput" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="68dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/isbnText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/descInput"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Enter Book's Description"
+            android:inputType="textPersonName"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/priceInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/authorInput"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="68dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descText" />
+
+        <TextView
+            android:id="@+id/idText"
+            android:layout_width="68dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Book ID"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/titleText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/idInput"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Enter the Book ID"
+            android:inputType="textPersonName|text"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/titleInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/descText"
+            android:layout_width="68dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="Description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/priceText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/authorText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/titleInput"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Enter the Book's Title"
+            android:inputType="textPersonName"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/isbnInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/idInput"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/authorInput"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Enter Author's Name"
+            android:inputType="textPersonName"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/descInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/isbnInput"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/isbnText"
+            android:layout_width="68dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="ISBN"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/authorText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/authorText"
+            android:layout_width="68dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Author"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/descText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/isbnText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/isbnInput"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Enter the Book's ISBN"
+            android:inputType="textPersonName"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/authorInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/titleInput"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.22" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="367dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline">
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
