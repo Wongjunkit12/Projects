@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH --job-name=SerialBloomFilterJob
+#SBATCH --time=00:10:00
+#SBATCH --mem=16G
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=12
+#SBATCH --output=SerialBloomFilterJob.%j.out
+#SBATCH --partition=defq
+
+if [ ! -f serial ]
+then
+ gcc -o serial SerialBloomFilter.c -lm
+else
+ if [ SerialBloomFilter.c -nt serial ]
+ then
+  gcc -o serial SerialBloomFilter.c -lm
+ fi
+fi
+
+
+./serial
+
+exit 0
