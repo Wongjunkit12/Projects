@@ -1,0 +1,176 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#f9f9f9",
+  "params":[
+    {
+      "name": "Year_selection",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+    },
+    { "name": "top_n", 
+      "value": 5,
+			"bind": {
+        "input": "range", 
+        "min": 5, 
+        "max": 20, 
+        "step": 1,
+        "name": "Top N: "
+      }
+		}
+  ],
+  "title": {
+    "text": {
+      "signal": "'Top ' + top_n + ' Countries with Highest Value of Exported Goods in ' + Year_selection"
+    },
+    "fontSize": 20,
+    "fontWeight": "bold"
+  },
+  "data": {
+    "url": "data/exports_imports_dataset.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "width": 1000,
+  "height": 400,
+  "layer": [
+    {
+      "params":[
+        {
+          "name": "continent_highlight",
+          "select": {"type": "point", "fields": ["Continent"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {
+          "filter": "datum.Year == Year_selection"
+        },
+        {
+          "sort": [
+            {
+              "field": "Export (US$ Billions)", 
+              "order": "descending" 
+            }
+          ],
+          "window": [
+            {
+              "op": "rank",
+              "as": "topN"
+            }
+          ],
+          "groupby": ["Year"]
+        },
+        {
+          "filter": "datum.topN <= top_n"
+        }
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Export (US$ Billions)",
+          "type": "quantitative",
+          "title": "Value of Exported Goods (US$ Billion)",
+          "aggregate": "max"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "title": "Country",
+          "sort": "-x"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal",
+          "title": "Continent",
+          "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628"
+            ]
+          },
+          "legend": {
+            "padding": 10
+          }
+        },
+        "opacity": {
+          "condition": {"param": "continent_highlight", "value": 0.6},
+          "value": 0.2
+        }, 
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Continent", "type": "nominal", "title": "Continent"},
+          {"field": "Year", "type": "quantitative", "title": "Year"},
+          {"field": "Export (US$ Billions)", "type": "quantitative", "title": "Value of Exported Goods (US$ Billion)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 340,
+        "dy": -40,
+        "fontSize": 13,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "text": {
+          "value": "China overtook Germany and other"
+        },
+        "color" : {
+          "value": "black"
+        },
+        "tooltip": {
+          "value": "The 2008 global crisis shakened the economic foundation of advanced economies, creating a power vacuum that China would fill."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 340,
+        "dy": -25,
+        "fontSize": 13,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "text": {
+          "value": "European countries in total exports in 2009"
+        },
+        "color" : {
+          "value": "black"
+        },
+        "tooltip": {
+          "value": "The 2008 global crisis shakened the economic foundation of advanced economies, creating a power vacuum that China would fill."
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "grid": false
+    }
+  }
+}

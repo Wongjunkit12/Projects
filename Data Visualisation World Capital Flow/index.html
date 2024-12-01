@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FIT3179 Data Visualisation 2</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <div class="pure-g">
+        <div id="vis-header" div class="pure-u-1-1">
+          <h1>Capital Flow of the World</h1>
+        </div>
+        <div class="pure-u-1-1">
+          <div class="description-bottom">
+            <p><b>Capital Flow</b> is the <b>movement of money</b> for the purpose of trade and business operations between international entities. <b>Trading forms the backbone</b> of many countries' economies, allowing them to access <b>goods and services</b> not produced domestically. This dashboard provide insights in the dynamics of capital flow between countries globally.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g">
+        <div id="vis-header" class="pure-u-1-1">
+          <h2>Balance of Trade of Countries (2000 - 2020)</h2>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-1">
+          <div class="description-bottom">
+            <p>The <b>trade balance</b> is the difference between the value of a country's exports and imports. A <b><span style="color: #1e5c9c">positive trade balance</span></b> means that a country exports more than it imports, while a <b><span style="color: #881a42">negative trade balance</span></b> imples the opposite. Through this map, we can observe the distribution of trade balances across the world and analyse the trends and patterns of global trade. Due to the <b>2008 global financial crisis</b>, a lot of countries suffered a decline in trade in 2009 as their economies struggled to recover.<br><br>Hover over annotations to see their tooltips.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g">
+        <div id="vis-header" class="pure-u-1-1">
+          <h2>Trade Volume of Countries (2000 - 2020)</h2>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="vis2" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-1">
+          <div class="description-bottom">
+            <p>The <b>total trade volume</b> is the sum of a countries' imports and exports. The <b>Gross Domestic Product (GDP)</b> is the total value of goods and services produced by a country in a year. A large trading volume implies a <b>healthy economy</b> as it indicates that a country is actively engaged in the global market and has a <b>high demand</b> and supply of goods and services. A large trading volume can also foster <b>economic growth</b>, <b>innovation</b> and cooperation among countries, boosting it's <b>GDP</b>.<br><br>Hover over annotations to see their tooltips.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g">
+        <div id="vis-header" class="pure-u-1-1">
+          <h2>Top N Countries with Most Exports (2000 - 2020)</h2>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-1">
+          <div class="description-bottom">
+            <p>Exports are <b>goods</b> or <b>services</b> produced in one country that are sold to another country. Exports are important for a country's economy, as they can <b>create jobs</b>, <b>increase incomes</b>, <b>foster innovation</b> and more. Through this bar chart, it can be deduced easily which countries are the <b>top exporters</b> of the world. In addition, one can observe how the exports of different countries vary over time, influenced by external factors like the <b>2008 global financial crisis</b> or <b>COVID-19</b>.<br><br>Hover over annotations to see their tooltips.<p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type = "text/javascript">
+      var spec1 = "js/map.vg.json";
+      var spec2 = "js/bubble.vg.json";
+      var spec3 = "js/bar.vg.json";
+
+      vegaEmbed("#vis1", spec1,{actions:false, renderer:'svg'}).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error,{actions:false, renderer:'svg'});
+      vegaEmbed("#vis2", spec2).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error,{actions:false, renderer:'svg'});
+      vegaEmbed("#vis3", spec3).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error,{actions:false, renderer:'svg'});
+    </script>
+  </body>
+</html>

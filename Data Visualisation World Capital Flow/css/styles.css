@@ -1,0 +1,73 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #f5f5f5;
+  }
+
+h1 {
+	margin-left: 25px;
+	font-size: 60px;
+	font-family: 'Georgia';
+}
+
+h2 {
+	margin-left: 25px;
+	font-size: 30px;
+	font-family: 'Georgia';
+}
+
+p {
+	font-size: larger;
+	margin-left: 25px;
+}
+
+.dashboard {
+	background-color: #750e0e;
+	padding: 25px;
+	border-radius: 10px;
+}
+
+#vg-tooltip-element {
+	font-size: 15px !important;
+}
+
+.vega-bindings {
+	display: flex;
+	justify-content: space-between; 
+	padding: 10px; 
+	background-color: #f9f9f9; 
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.vega-bindings > div {
+	flex-grow: 1; 
+	margin-left: 10px;
+}
+
+.vega-bindings > div:last-child {
+	margin-right: 0px;
+}
+
+.pure-g {
+    background: #f9f9f9;
+	padding: 20px;
+    margin-bottom: 30px;
+    border-color: #1e0303;
+	border-style: double;
+	border-radius: 15px;
+    border-width: 10px;
+}
+
+#vis-header {
+	background: #f0f0f0;
+	margin-bottom: 10px;
+	margin-left: 15px;
+	border-radius: 15px;
+	border-width: 2.5px;
+}
+
+.vis-container {
+	margin-top: 40px;
+	margin-left: 20px;
+}

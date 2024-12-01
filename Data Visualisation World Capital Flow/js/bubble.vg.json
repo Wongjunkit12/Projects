@@ -1,0 +1,209 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#f9f9f9",
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "title": {
+    "text": {
+      "signal": "'Trade Volume and GDP of Countries in ' + Year_selection"
+    },
+    "fontSize": 20,
+    "fontWeight": "bold"
+  },
+  "data": {
+    "url": "data/exports_imports_dataset.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "width": 1050,
+  "height": 400,
+  "layer": [
+    {
+      "params":[
+        {
+          "name": "continent_highlight",
+          "select": {"type": "point", "fields": ["Continent"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {
+          "filter": "datum.Year == Year_selection"
+        }
+      ],         
+      "mark": "circle",
+      "encoding": {
+        "x": {
+          "field": "Export (US$ Billions)",
+          "type": "quantitative",
+          "title": "Capital Inflow in Exports in (US$ Billions)",
+          "axis": {"tickCount": 6},
+          "scale": {"type": "log"}
+        },
+        "y": {
+          "field": "Import (US$ Billions)",
+          "type": "quantitative",
+          "title": "Capital Outflow in Imports (US$ Billions)",
+          "axis": {"tickCount": 6},
+          "scale": {"type": "log"}
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal",
+          "title": "Continent",
+          "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628"
+            ]
+          },
+          "legend": {
+            "padding": 10
+          }
+        },
+        "opacity": {
+          "condition": {"param": "continent_highlight", "value": 0.6},
+          "value": 0.2
+        },              
+        "size": {
+          "field":"GDP (US$ Billions)",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1, 5, 10, 20, 100, 200, 500, 1000, 5000, 10000, 20000],
+            "range": [10, 20, 50, 75, 100, 200, 250, 350, 500, 800, 1200]
+            },
+            "legend": {
+              "format": ".1s",
+              "padding": 5,
+              "values": [1, 5, 10, 20, 100, 200, 500, 1000, 5000, 10000]
+            }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Continent", "type": "nominal", "title": "Continent"},
+          {"field": "Year", "type": "quantitative", "title": "Year"},
+          {"field": "Trade Volume (US$ Billions)", "type": "quantitative", "title": "Total Trade Volume (US$ Billions)"},
+          {"field": "GDP (US$ Billions)", "type": "quantitative", "title": "Gross Domestic Product (US$ Billions)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 350,
+        "dy": -30,
+        "fontSize": 13,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "text": {
+          "value": "Positive correlation relationship between"
+        },
+        "color" : {
+          "value": "black"
+        },
+        "tooltip": {
+          "value": "High trading volumes can stimulate the economy and increase economic activity, resulting in an increase in GDP."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 350,
+        "dy": -15,
+        "fontSize": 13,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "text": {
+          "value": "total trade volume and GDP"
+        },
+        "color" : {
+          "value": "black"
+        },
+        "tooltip": {
+          "value": "High trading volumes can stimulate the economy and increase economic activity, resulting in an increase in GDP."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": -200,
+        "dy": -100,
+        "fontSize": 13,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "text": {
+          "value": "Countries in Africa generally have a"
+        },
+        "color" : {
+          "value": "black"
+        },
+        "tooltip": {
+          "value": "Africa is generally less developed than other continents, resulting in a small market and low trade volume."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": -200,
+        "dy": -85,
+        "fontSize": 13,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "text": {
+          "value": "lower trading volumne and GDP."
+        },
+        "color" : {
+          "value": "black"
+        },
+        "tooltip": {
+          "value": "Africa is generally less developed than other continents, resulting in a small market and low trade volume."
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "grid": false
+    }
+  }
+}

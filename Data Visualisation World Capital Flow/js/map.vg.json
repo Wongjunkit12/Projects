@@ -1,0 +1,194 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#f9f9f9",
+  "data": {
+    "url": "data/exports_imports_dataset.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "zoom_level",
+      "value": 140,
+      "bind": {
+        "input": "range",
+        "min": 140,
+        "max": 640,
+        "step": 20,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [0, -180],
+      "bind": {
+        "input": "select",
+        "options": [
+          [0, -180],
+          [130, -25],
+          [110, 5],
+          [110, 32],
+          [-100, 40],
+          [35, 40]
+        ],
+        "labels": ["Center Map", "Australia", "Malaysia", "China", "United States", "Turkey"],
+        "name": "Map Centre: "
+      }
+    }
+  ],
+  "title": {
+    "text": {
+      "signal": "'Balance of Trade (US$ Billions) of Countries in ' + Year_selection"
+    },
+    "fontSize": 20,
+    "fontWeight": "bold"
+  },
+  "width": 1050,
+  "height": 400,
+  "data": {
+    "url": "data/exports_imports_dataset.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "projection": {
+    "type": "equalEarth",
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}
+  },
+  "transform": [
+    {
+      "lookup": "Country",
+      "from": {
+        "data": {
+          "url": "js/countries.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "countries"
+          }
+        },
+        "key": "properties.NAME"
+      },
+      "as": "geo"
+    },
+    {
+      "filter": "datum['Year'] == Year_selection"
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "js/oceans.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightcyan"}
+    },
+    {
+      "data": {
+        "url": "js/graticules.topojson",
+        "format": {"type": "topojson", "feature": "graticules"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    },
+    {
+      "mark": {
+        "type": "geoshape",
+        "stroke": "gray"
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "Trade Balance (US$ Billions)",
+          "type": "quantitative",
+          "title": "Balance of Trade (US$ Billions)",
+          "scale": {
+            "domainMid": 0,
+            "domain": [-1500, -1000, -500, -100, -50, -20, -10, -5, 0, 5, 10, 20, 50, 100, 500, 1000, 1500],
+            "range": ["#35000f", "#4e0017", "#67001f", "#7f0038", "#980043", "#b2182b", "#d6604d", "#f4a582", "#ffe7c8", "#d1e5f0", "#abcfe3", "#7ebbd8", "#4393c3", "#1d5997", "#2166ac", "#053061", "#042449"]
+          },
+          "legend": {
+              "padding": 10
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Continent", "type": "nominal", "title": "Continent"},
+          {"field": "Year", "type": "quantitative", "title": "Year"},
+          {"field": "Trade Balance (US$ Billions)", "type": "quantitative", "title": "Balance of Trade (US$ Billions)"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/world_country_latitude_and_longitude_values.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "line-top",
+            "dx": -4,
+            "dy": -6,
+            "fontSize": 12,
+            "fontWeight": "normal"
+          },
+          "encoding": {
+            "text": {
+              "condition": {
+                "test": "datum['Country'] == 'China' || datum['Country'] == 'United States' || datum['Country'] == 'Australia'",
+                "field": "Country",
+                "type": "nominal"
+              },
+              "value": ""
+            },
+            "color" : {
+              "value": "white"
+            },
+            "tooltip": {
+              "condition": {
+                "test": "datum['Country'] == 'China' || datum['Country'] == 'United States' || datum['Country'] == 'Australia'",
+                "field": "Tooltip",
+                "type": "nominal"
+              },
+              "value": ""
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "axis": {
+      "grid": false
+    }
+  }
+}
