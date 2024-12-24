@@ -1,20 +1,5 @@
-# FIT3077 Assignment
-## Sprint Four
+# Fiery Dragon Board Game in Java using OOP
 
-The docs directory contains design related documents in their respective subdirectories:
-1. UML Class Diagram (FIT3077 Sprint Four UML Class Diagram.pdf).
-2. The Sprint Four document with all our deliverables.
+In this project, I designed and developed the "Fiery Dragons" board game, aimed at 2 to 4 players aged 5 to 99. The game revolves around dragons competing to reach their caves first while navigating a volcano-themed board. Utilising Java and OOP principles, I created a graphical user interface (GUI) with JavaFX to enhance the gameplay experience.
 
-The Source codebase can be found in the src directory, containing the prototype Fiery Dragon Board Game.
-It contains the code for our extensions such as:
-
-1. New Dragon Card 1 (Knight)
-2. Saving and Loading
-3. Self-Defined Extension - Attack and Stun Dragons (Skip Turn)
-
-The Executable jar file is located in the executable directory, with instructions on how to generate the jar file
-from the source code in the README.md of the directory.
-
-Video recording of game demonstration is found in the video directory.
-
-Contribution Logs is in the Wiki under https://git.infotech.monash.edu/FIT3077/fit3077-s1-2024/MA_Tuesday12pm_Team005/-/wikis/Contribution-Log
+Through this project, I gained valuable insights into game design and development The agile-based development process, divided into four distinct sprints, taught me invaluable lessons about software architecture and design principles that is applicable in the real world in a professional environment. I learned how to effectively implement OOP concepts such as encapsulation, inheritance and polymorphism to create modular and maintainable code. The process of designing the domain model for the game helped me understand the importance of defining clear relationships between entities, such as dragons, caves and cards. Additionally, I developed skills in user interface design, ensuring that the game was visually appealing and easy to navigate for players of all ages. Testing the game mechanics allowed me to refine gameplay balance and enhance user engagement. Overall, the iterative nature of the development, incorporating CRC cards and continuous critique, enhanced my understanding of code organization, UI design principles and the importance of maintainable, scalable architecture.
